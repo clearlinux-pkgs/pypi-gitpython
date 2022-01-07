@@ -6,7 +6,7 @@
 #
 Name     : pypi-gitpython
 Version  : 3.1.24
-Release  : 78
+Release  : 79
 URL      : https://files.pythonhosted.org/packages/34/cc/aaa7a0d066ac9e94fbffa5fcf0738f5742dd7095bdde950bd582fca01f5a/GitPython-3.1.24.tar.gz
 Source0  : https://files.pythonhosted.org/packages/34/cc/aaa7a0d066ac9e94fbffa5fcf0738f5742dd7095bdde950bd582fca01f5a/GitPython-3.1.24.tar.gz
 Source1  : https://files.pythonhosted.org/packages/34/cc/aaa7a0d066ac9e94fbffa5fcf0738f5742dd7095bdde950bd582fca01f5a/GitPython-3.1.24.tar.gz.asc
@@ -18,10 +18,6 @@ Requires: pypi-gitpython-python = %{version}-%{release}
 Requires: pypi-gitpython-python3 = %{version}-%{release}
 Requires: gitdb
 BuildRequires : buildreq-distutils3
-Provides: GitPython
-Provides: GitPython-python
-Provides: GitPython-python3
-BuildRequires : gitdb
 BuildRequires : pypi(gitdb)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(typing_extensions)
@@ -55,7 +51,6 @@ Group: Default
 Requires: python3-core
 Provides: pypi(gitpython)
 Requires: pypi(gitdb)
-Requires: pypi(typing_extensions)
 
 %description python3
 python3 components for the pypi-gitpython package.
@@ -70,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641438604
+export SOURCE_DATE_EPOCH=1641590855
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
