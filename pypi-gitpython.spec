@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x9CB5EE7895E8268B (sebastian.thiel@icloud.com)
 #
 Name     : pypi-gitpython
-Version  : 3.1.26
-Release  : 82
-URL      : https://files.pythonhosted.org/packages/70/b0/23e3245248f63eac75335828527016c7636c1780e7ad934a341970b47a78/GitPython-3.1.26.tar.gz
-Source0  : https://files.pythonhosted.org/packages/70/b0/23e3245248f63eac75335828527016c7636c1780e7ad934a341970b47a78/GitPython-3.1.26.tar.gz
-Source1  : https://files.pythonhosted.org/packages/70/b0/23e3245248f63eac75335828527016c7636c1780e7ad934a341970b47a78/GitPython-3.1.26.tar.gz.asc
+Version  : 3.1.27
+Release  : 83
+URL      : https://files.pythonhosted.org/packages/d6/39/5b91b6c40570dc1c753359de7492404ba8fe7d71af40b618a780c7ad1fc7/GitPython-3.1.27.tar.gz
+Source0  : https://files.pythonhosted.org/packages/d6/39/5b91b6c40570dc1c753359de7492404ba8fe7d71af40b618a780c7ad1fc7/GitPython-3.1.27.tar.gz
+Source1  : https://files.pythonhosted.org/packages/d6/39/5b91b6c40570dc1c753359de7492404ba8fe7d71af40b618a780c7ad1fc7/GitPython-3.1.27.tar.gz.asc
 Summary  : GitPython is a python library used to interact with Git repositories
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -20,7 +20,6 @@ Requires: pypi(gitdb)
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(gitdb)
 BuildRequires : pypi(setuptools)
-BuildRequires : pypi(typing_extensions)
 BuildRequires : pypi(wheel)
 
 %description
@@ -51,22 +50,21 @@ Group: Default
 Requires: python3-core
 Provides: pypi(gitpython)
 Requires: pypi(gitdb)
-Requires: pypi(typing_extensions)
 
 %description python3
 python3 components for the pypi-gitpython package.
 
 
 %prep
-%setup -q -n GitPython-3.1.26
-cd %{_builddir}/GitPython-3.1.26
+%setup -q -n GitPython-3.1.27
+cd %{_builddir}/GitPython-3.1.27
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1642004639
+export SOURCE_DATE_EPOCH=1645386595
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -79,7 +77,7 @@ python3 -m build --wheel --skip-dependency-check --no-isolation
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-gitpython
-cp %{_builddir}/GitPython-3.1.26/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gitpython/98a91252d682790e518df3df5c68339d17ab7e47
+cp %{_builddir}/GitPython-3.1.27/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gitpython/98a91252d682790e518df3df5c68339d17ab7e47
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
