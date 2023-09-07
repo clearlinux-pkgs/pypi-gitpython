@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-gitpython
-Version  : 3.1.34
-Release  : 100
-URL      : https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz
-Source0  : https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz
+Version  : 3.1.35
+Release  : 101
+URL      : https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz
+Source0  : https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz
 Summary  : GitPython is a Python library used to interact with Git repositories
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -57,10 +57,10 @@ python3 components for the pypi-gitpython package.
 
 
 %prep
-%setup -q -n GitPython-3.1.34
-cd %{_builddir}/GitPython-3.1.34
+%setup -q -n GitPython-3.1.35
+cd %{_builddir}/GitPython-3.1.35
 pushd ..
-cp -a GitPython-3.1.34 buildavx2
+cp -a GitPython-3.1.35 buildavx2
 popd
 
 %build
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1693931468
+export SOURCE_DATE_EPOCH=1694100195
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
