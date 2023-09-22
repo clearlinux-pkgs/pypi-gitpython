@@ -4,14 +4,13 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-gitpython
-Version  : 3.1.36
-Release  : 102
-URL      : https://files.pythonhosted.org/packages/a7/bc/4970a84934f8783cbd7851703531742977aa6fb77a2128401e5ba3c5989f/GitPython-3.1.36.tar.gz
-Source0  : https://files.pythonhosted.org/packages/a7/bc/4970a84934f8783cbd7851703531742977aa6fb77a2128401e5ba3c5989f/GitPython-3.1.36.tar.gz
+Version  : 3.1.37
+Release  : 103
+URL      : https://files.pythonhosted.org/packages/c6/33/5e633d3a8b3dbec3696415960ed30f6718ed04ef423ce0fbc6512a92fa9a/GitPython-3.1.37.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c6/33/5e633d3a8b3dbec3696415960ed30f6718ed04ef423ce0fbc6512a92fa9a/GitPython-3.1.37.tar.gz
 Summary  : GitPython is a Python library used to interact with Git repositories
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: pypi-gitpython-license = %{version}-%{release}
 Requires: pypi-gitpython-python = %{version}-%{release}
 Requires: pypi-gitpython-python3 = %{version}-%{release}
 Requires: pypi(gitdb)
@@ -26,14 +25,6 @@ BuildRequires : pypi(setuptools)
 ![Python package](https://github.com/gitpython-developers/GitPython/workflows/Python%20package/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/gitpython/badge/?version=stable)](https://readthedocs.org/projects/gitpython/?badge=stable)
 [![Packaging status](https://repology.org/badge/tiny-repos/python:gitpython.svg)](https://repology.org/metapackage/python:gitpython/versions)
-
-%package license
-Summary: license components for the pypi-gitpython package.
-Group: Default
-
-%description license
-license components for the pypi-gitpython package.
-
 
 %package python
 Summary: python components for the pypi-gitpython package.
@@ -56,10 +47,10 @@ python3 components for the pypi-gitpython package.
 
 
 %prep
-%setup -q -n GitPython-3.1.36
-cd %{_builddir}/GitPython-3.1.36
+%setup -q -n GitPython-3.1.37
+cd %{_builddir}/GitPython-3.1.37
 pushd ..
-cp -a GitPython-3.1.36 buildavx2
+cp -a GitPython-3.1.37 buildavx2
 popd
 
 %build
@@ -67,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1694531648
+export SOURCE_DATE_EPOCH=1695394320
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -88,8 +79,6 @@ popd
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/package-licenses/pypi-gitpython
-cp %{_builddir}/GitPython-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gitpython/98a91252d682790e518df3df5c68339d17ab7e47 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -106,10 +95,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-
-%files license
-%defattr(0644,root,root,0755)
-/usr/share/package-licenses/pypi-gitpython/98a91252d682790e518df3df5c68339d17ab7e47
 
 %files python
 %defattr(-,root,root,-)
