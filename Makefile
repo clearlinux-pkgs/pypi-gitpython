@@ -1,5 +1,5 @@
 PKG_NAME := pypi-gitpython
-URL = https://files.pythonhosted.org/packages/c6/33/5e633d3a8b3dbec3696415960ed30f6718ed04ef423ce0fbc6512a92fa9a/GitPython-3.1.37.tar.gz
+URL = https://files.pythonhosted.org/packages/b3/45/cee7af549b6fa33f04531e402693a772b776cd9f845a2cbeca99cfac3331/GitPython-3.1.38.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
