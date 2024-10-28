@@ -7,7 +7,7 @@
 #
 Name     : pypi-gitpython
 Version  : 3.1.43
-Release  : 110
+Release  : 111
 URL      : https://files.pythonhosted.org/packages/b6/a1/106fd9fa2dd989b6fb36e5893961f82992cf676381707253e0bf93eb1662/GitPython-3.1.43.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b6/a1/106fd9fa2dd989b6fb36e5893961f82992cf676381707253e0bf93eb1662/GitPython-3.1.43.tar.gz
 Summary  : GitPython is a Python library used to interact with Git repositories
